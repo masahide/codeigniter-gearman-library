@@ -80,6 +80,32 @@ class Gearman
     }
 
     /**
+     * Add task for a client
+     * @access public
+     * @param string
+     * @param string
+     * @return void
+     */
+    public function add_task($function,$param)
+    {
+        $this->client->addTask($function,$param);
+        log_message('debug', "Gearman Library: Add task with function $function with parameter $param");
+    }
+
+    /**
+     * Run Tasks for a client
+     * @access public
+     * @param string
+     * @param string
+     * @return void
+     */
+    public function run_task()
+    {
+        $this->client->runTasks();
+        log_message('debug', "Gearman Library: Run Tasks");
+    }
+
+    /**
      * Perform a job in foreground for a client
      * @access public
      * @param string
