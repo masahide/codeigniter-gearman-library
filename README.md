@@ -13,13 +13,13 @@ I created this repository to track the changes I make to the gearman library her
 Feel free to pull this rep and make your own changes. 
 
 ## Client Example 
-    $this->load->library('gearman_library');
-    $this->gearman_library->gearman_client();
-    $this->gearman_library->do_job_background('identifier',serialize($params)); 
+    $this->load->library('gearman');
+    $this->gearman->gearman_client();
+    $this->gearman->do_job_background('identifier',serialize($params)); 
 
 ## Worker Example 
-    $this->load->library('gearman_library');
-    $this->gearman_library->gearman_worker();
+    $this->load->library('gearman');
+    $this->gearman->gearman_worker();
 
     function worker_fn() {
         //worker code ...
